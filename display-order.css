@@ -1,0 +1,17 @@
+﻿.ordered
+{
+    display:table;
+    width:100%;
+}
+#div1
+{
+    display: table-footer-group;
+}
+#div2
+{
+    display: table-header-group;
+}
+#div3
+{
+    display: table-row-group;
+}
