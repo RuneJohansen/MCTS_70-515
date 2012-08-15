@@ -1,0 +1,73 @@
+﻿<!DOCTYPE HTML>
+<html>
+<!--
+                        left: ($(window).width() - $(".loginBox").outerWidth()) / 2,
+                        top: ($(window).height() - $(".loginBox").outerHeight()) / 2
+-->
+    <head>
+    <!-- Bootstrap Image Gallery på Github... -->
+        <link rel="Stylesheet" type="text/css" href="http://blueimp.github.com/cdn/css/bootstrap.min.css" />
+        <title></title>
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/jscript">
+            $(document).ready(function () {
+
+                $("#lnk").on("click", function (event) {
+                    event.preventDefault();
+                    $(".loginBox").show();
+                    $(".loginBox").animate({
+                        opacity: 1,
+                        left: ($(window).width() - 175) / 2,
+                        top: ($(window).height() - 175) / 2,
+                        width: 250,
+                        height: 250
+                    }, 1500);
+                });
+
+                $("#btnLogin").on("click", function (event) {
+                    $(".loginBox").animate({
+                        opacity: 0,
+                        top: $(window).height()
+                    }, 500);
+                });
+
+
+            });
+        </script>
+
+        <style type="text/css">
+            .loginBox
+            {
+                opacity: 0;
+                display: none;
+                background-color: #AA0000;
+                height: 0px;
+                width: 0px;
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin-left: -50px;
+                margin-right: -50px;
+                border:2px solid #550000;
+                border-radius:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <a id="lnk" href="#">Login</a> 
+        <div class="loginBox">
+            <p>Login</p>
+            <input id="userName" type="text" value="Username or e-mail" />
+            <p>Password</p>
+            <input id="password" type="password" value="Password" />
+
+            <!-- <input type="submit" id="login" /> -->
+            <p>
+                <button id=btnLogin class="btn-success" url="">
+                    <span>Login</span>
+                </button>
+            </p>
+        </div>
+    </body>
+</html>
