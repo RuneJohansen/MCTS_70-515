@@ -1,0 +1,30 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title></title>
+        <link rel="Stylesheet" type="text/css" href="display-order.css" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/jscript">
+            $(document).ready(function () {
+                $("#btn").on("click", function (event) {
+                    event.preventDefault();
+                    $("#handle").before("Hat");
+                    $("#handle").after("og briller");
+                    $("#hat").height("200px");
+                    $("#hat").width("200px");
+                    $("#handle").slideUp("slow", function () { });
+                    $("#handle").slideDown("slow", function () { });
+                    $("#handle").fadeOut(1000, function () { });
+                    $("#handle").fadeIn(3000);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="handle">
+            <img id="hat" src="http://1.bp.blogspot.com/-bL6gu1Uy6U0/TaiQjENgSfI/AAAAAAAAAUI/xbmOqC7l5Q4/s320/bowler-hat-red.jpg" alt="" width="100" height="123" />
+        </div>
+        <br />
+        <input type="submit" id="btn" />
+    </body>
+</html>
