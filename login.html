@@ -5,11 +5,12 @@
                         top: ($(window).height() - $(".loginBox").outerHeight()) / 2
 -->
     <head>
-    <!-- Bootstrap Image Gallery på Github... -->
+        <!-- Bootstrap Image Gallery på Github... -->
         <link rel="Stylesheet" type="text/css" href="http://blueimp.github.com/cdn/css/bootstrap.min.css" />
         <title></title>
 
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
         <script type="text/jscript">
             $(document).ready(function () {
 
@@ -23,6 +24,7 @@
                         width: 250,
                         height: 250
                     }, 1500);
+                    $("#lnk").hide();
                 });
 
                 $("#btnLogin").on("click", function (event) {
@@ -30,6 +32,7 @@
                         opacity: 0,
                         top: $(window).height()
                     }, 500);
+                    $("#lnk").show();
                 });
 
 

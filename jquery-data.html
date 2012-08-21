@@ -1,0 +1,59 @@
+<html>
+<head>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+ 
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("div.clickable").mouseover(function () {
+                $(this).css("cursor", "pointer");
+                $(this).css("background-color", "#EEEEEE");
+            });
+
+            $("div.clickable").mouseleave(function () {
+                $(this).css("cursor", "");
+                $(this).css("background-color", "");
+            });
+
+            $(document).on("click", function (event) {
+
+                console.log("allowclick " + $(event.target).data("allowclick"));
+                if ($(event.target).data("allowclick"))
+                    console.log("YO");
+
+                var allowClick = $(event.target).data("allowclick") == "True";
+                var allowCopy = $(event.target).data("allowcopy") == "True";
+                var isSafe = $(event.target).data("safe") == "True";
+                var forceOverWrite = $("#currentText").data("forceoverwrite") == "True";
+                var thisOverWrites = $(event.target).data("force") == "True";
+                var currentText = $("#currentText").text();
+
+                if (allowClick || forceOverWrite) {
+                    if (allowCopy && currentText == "") {
+                        if (thisOverWrites)
+                            $("#currentText").data("forceoverwrite", "True");
+                        else
+                            $("#currentText").data("forceoverwrite", "False");
+                        $("#currentText").html($(event.target).text());
+                    }
+                    else if ((!isSafe || forceOverWrite) && currentText != "") {
+                        $(event.target).html(currentText);
+                        $("#currentText").html("");
+                    }
+                }
+            });
+
+        });
+     </script>		 
+ </head>
+ 
+ <body>
+		<div class="clickable" data-allowclick="hatogbriller" data-safe="True" data-allowcopy="False">I have some nice text here.</div>
+		<div class="clickable" data-allowclick="True" data-safe="False" data-allowcopy="False">I dont like my text.</div>
+		<div class="clickable" data-allowclick="True" data-safe="True" data-allowcopy="True">I love to share ny text with others.</div>
+		<div class="clickable" data-allowclick="True" data-safe="True" data-allowcopy="True" data-force="True" >HA... I WILL OVER WRITE YOU!</div>
+        <br />
+		<div id="currentText" style="border:1 solid black; height:20px;" data-forceoverwrite="False"></div>
+ </body>
+ </html>
+ 

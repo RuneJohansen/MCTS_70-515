@@ -1,0 +1,5 @@
+C:\Users\Administrator.WIN-JLAING9LMBJ\Documents\GitHub\MCTS_70-515\Sticks\Sticks\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator.WIN-JLAING9LMBJ\Documents\GitHub\MCTS_70-515\Sticks\Sticks\bin\Debug\Sticks.exe
+C:\Users\Administrator.WIN-JLAING9LMBJ\Documents\GitHub\MCTS_70-515\Sticks\Sticks\bin\Debug\Sticks.pdb
+C:\Users\Administrator.WIN-JLAING9LMBJ\Documents\GitHub\MCTS_70-515\Sticks\Sticks\obj\x86\Debug\Sticks.exe
+C:\Users\Administrator.WIN-JLAING9LMBJ\Documents\GitHub\MCTS_70-515\Sticks\Sticks\obj\x86\Debug\Sticks.pdb

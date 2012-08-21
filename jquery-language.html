@@ -1,0 +1,58 @@
+<html>
+<head>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+ 
+    <script type="text/javascript">
+
+        var lanTxt = new Array(16);
+        for (i = 0; i < 16; i++) {
+            lanTxt[i] = new Array(2)
+            lanTxt[i]["DK"] = "Jeg er tekst linjenummer " + i + " af mange.";
+            lanTxt[i]["EN"] = "I am text line number " + i + " of many.";
+            lanTxt[i]["DE"] = "Ich bin ein Berliner no. " + i + ".";
+        }
+
+        $(document).ready(function () {
+
+            $("select").append($("<option></option>").attr("value","DE").text("German"));
+
+            $("select").change(function () {
+
+                $.each($("#container > div"), function (idx, elem) {
+                    $(elem).html(lanTxt[idx][$("select").val()]);
+                });
+
+            });
+
+        });
+
+    </script>
+	
+ </head>
+ 
+ <body>
+	<select>
+		<option value="DK">Dansk</option>
+		<option value="EN">English</option>
+	</select>
+	<div id="container">
+		<div>Jeg er tekst linge nummer 0 af mange.</div>
+		<div>Jeg er tekst linge nummer 1 af mange.</div>		
+		<div>Jeg er tekst linge nummer 2 af mange.</div>
+		<div>Jeg er tekst linge nummer 3 af mange.</div>
+		<div>Jeg er tekst linge nummer 4 af mange.</div>
+		<div>Jeg er tekst linge nummer 5 af mange.</div>
+		<div>Jeg er tekst linge nummer 6 af mange.</div>
+		<div>Jeg er tekst linge nummer 7 af mange.</div>
+		<div>Jeg er tekst linge nummer 8 af mange.</div>
+		<div>Jeg er tekst linge nummer 9 af mange.</div>
+		<div>Jeg er tekst linge nummer 10 af mange.</div>
+		<div>Jeg er tekst linge nummer 11 af mange.</div>
+		<div>Jeg er tekst linge nummer 12 af mange.</div>
+		<div>Jeg er tekst linge nummer 13 af mange.</div>
+		<div>Jeg er tekst linge nummer 14 af mange.</div>	
+		<div>Jeg er tekst linge nummer 15 af mange.</div>		
+	</div>
+ </body>
+ </html>
+ 

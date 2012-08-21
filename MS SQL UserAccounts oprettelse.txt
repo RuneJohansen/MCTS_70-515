@@ -1,0 +1,3 @@
+cmd-prompt
+
+aspnet_regsql.exe -E -S localhost -A p

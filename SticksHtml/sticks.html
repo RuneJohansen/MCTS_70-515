@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <title></title>
+        <style type="text/css">
+            .stick
+            {
+                float:left;
+                background-color: #888888;
+                margin-left: 10px;
+                margin-right: 10px;
+                width: 5px;
+                height: 100%;
+            }
+            #container
+            {
+                height: 60px;
+            }
+        </style>
+
+        <!-- Le styles -->
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/javascript" src="bootstrap-modal.js"></script>
+        <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.css">
+
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+
+                $("#myModal").modal({ keyboard: false });
+
+                paintSticks();
+
+                $("#btnNewGame").click(event, function () {
+                    paintSticks();
+                });
+
+                $(".btnStickCount").click(event, function () {
+                    console.log();
+                    var removeCnt = $(this).data("stickcount");
+                    var remainCnt = $("#container > .stick").last().index() + 1;
+                    console.log("rem" + removeCnt + "remain" + remainCnt);
+
+                    if (remainCnt >= removeCnt)
+                        $("#container:gt(" + (remainCnt - removeCnt) + ")").hide();
+                });
+
+            });
+
+            function paintSticks() {
+                $("#container").empty();
+                for (i = 0; i < 15; i++) {
+                    ctrl = $("<div class='stick'></div>")
+                    $("#container").append(ctrl);
+                }
+            }
+
+        </script>
+    </head>
+
+
+    <body>
+        <div class="modal hide" id="myModal">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">x</button>
+                <h3>Sticks</h3>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <button class="btn btn-inverse btnStickCount" data-stickcount="1">1</button>
+                    <button class="btn btn-inverse btnStickCount" data-stickcount="2">2</button>
+                    <button class="btn btn-inverse btnStickCount" data-stickcount="3">3</button>
+                    <br />
+                </p>
+                <div id="container">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a id="btnClose" href="#" class="btn" data-dismiss="modal">Luk</a>
+                <a id="btnNewGame" href="#" class="btn btn-primary" >Nyt spil</a>
+            </div>
+        </div>
+        
+    </body>
+
+</html>
