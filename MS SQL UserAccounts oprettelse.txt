@@ -1,3 +1,8 @@
 cmd-prompt
 
 aspnet_regsql.exe -E -S localhost -A p
+
+
+vis brugere
+ret felt? email
+password ukrypteret

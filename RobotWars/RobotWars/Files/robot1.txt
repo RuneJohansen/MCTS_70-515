@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot>
+	<navn>R.O. Bot</navn>
+	<runder>
+		<runde skjold="3" vaaben="2" />
+		<runde skjold="1" vaaben="3" />
+		<runde skjold="2" vaaben="1" />
+		<runde skjold="2" vaaben="2" />
+	</runder>
+	<tab>0</tab>
+	<sejre>4</sejre>
+	<liv>5</liv>
+	<uafgjort>2</uafgjort>
+</robot>
