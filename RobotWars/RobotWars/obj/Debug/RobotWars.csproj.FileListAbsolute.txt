@@ -3,3 +3,6 @@ C:\Users\Administrator.WIN-JLAING9LMBJ\Documents\GitHub\MCTS_70-515\RobotWars\Ro
 C:\Users\Administrator.WIN-JLAING9LMBJ\Documents\GitHub\MCTS_70-515\RobotWars\RobotWars\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Administrator.WIN-JLAING9LMBJ\Documents\GitHub\MCTS_70-515\RobotWars\RobotWars\obj\Debug\RobotWars.dll
 C:\Users\Administrator.WIN-JLAING9LMBJ\Documents\GitHub\MCTS_70-515\RobotWars\RobotWars\obj\Debug\RobotWars.pdb
+C:\Users\Administrator.WIN-JLAING9LMBJ\Documents\GitHub\MCTS_70-515\RobotWars\RobotWars\obj\Debug\RobotWars.Properties.Resources.resources
+C:\Users\Administrator.WIN-JLAING9LMBJ\Documents\GitHub\MCTS_70-515\RobotWars\RobotWars\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Administrator.WIN-JLAING9LMBJ\Documents\GitHub\MCTS_70-515\RobotWars\RobotWars\obj\Debug\GenerateResource.write.1.tlog

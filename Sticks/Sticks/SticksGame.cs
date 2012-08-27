@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Web;
+using System.Xml;
+using System.Xml.Linq;
 
 abstract class SticksGame
 {
@@ -10,9 +12,30 @@ abstract class SticksGame
 
     private int sticksCount;
     private int currentPlayer;
+    private void test()
+    {
+        string name;
+        string filePatch = "";
+        int wins, draws, losses, lives, weapon, shield;
+        List<Round> rounds = new List<Round>();
+
+        XElement xmlFile = XElement.Load(filePath);
+
+        IEnumerable<Xelement> robot = from elem in xmlFile.Descendants() select elem;
+
+        name = (from elem in robot.Elements("navn") select elem.ToString()).First();
+
+        int.TryParse((from elem in robot.Elements("sejre") select elem.ToString()).First(), out wins);
+        int.TryParse((from elem in robot.Elements("uafgjort") select elem.ToString()).First(), out draws);
+        int.TryParse((from elem in robot.Elements("tab") select elem.ToString()).First(), out losses);
+        int.TryParse((from elem in robot.Elements("liv") select elem.ToString()).First(), out lives);
+
+
+    }
     public bool ComputerOpponent
     {
         get { return this.Player2.ToLower() == "computer"; }
+
     }
     public int SticksCount
     {

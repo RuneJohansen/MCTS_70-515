@@ -18,18 +18,11 @@ namespace RobotWars
             public System.Text.StringBuilder rounds1 = new System.Text.StringBuilder();
             public System.Text.StringBuilder rounds2 = new System.Text.StringBuilder();
 
-            public override void ShowRound(bool robot1Hit, bool robot2Hit)
+            public override void ShowRound(RoundInformation robot1RoundInfo, RoundInformation robot2RoundInfo)
             {
 
-                rounds1.Append(String.Format("<span class='{0}'>W[{1}] S[{2}]</span><br />", robot1Hit ? "robotHit" : "robotMissed", robot1.AttackList[CurrentRound].Weapon, robot1.AttackList[CurrentRound].Shield));
-                rounds2.Append(String.Format("<span class='{0}'>W[{1}] S[{2}]</span><br />", robot2Hit ? "robotHit" : "robotMissed", robot2.AttackList[CurrentRound].Weapon, robot2.AttackList[CurrentRound].Shield));
-
-                /*
-                    robot1.Name, robot1.AttackList[CurrentRound].Weapon, robot1.AttackList[CurrentRound].Shield,
-                    robot2.Name, robot2.AttackList[CurrentRound].Weapon, robot2.AttackList[CurrentRound].Shield,
-                    robot1.Name, robot1Hit ? "was hit" : "was missed",
-                    robot2.Name, robot2Hit ? "was hit" : "was missed"));
-                 * */
+                rounds1.Append(String.Format("<span class='{0}'>W[{1}] S[{2}]</span><br />", robot1RoundInfo.WasHit ? "robotHit" : "robotMissed", robot1RoundInfo.Weapon, robot1RoundInfo.Shield));
+                rounds2.Append(String.Format("<span class='{0}'>W[{1}] S[{2}]</span><br />", robot2RoundInfo.WasHit ? "robotHit" : "robotMissed", robot2RoundInfo.Weapon, robot2RoundInfo.Shield));
             }
             public override void ShowMessage(int typeId, string message)
             {
@@ -59,11 +52,11 @@ namespace RobotWars
                 war.NewWar(file1, file2);
 
                 Literal lit1 = new Literal();
-                lit1.Text = String.Format(@"<strong>{0}</strong><br />Lives:  {1}<br /><br />Wins:   {2}<br />Draws:  {3}<br />Losses: {4}<br />", war.robot1.Name, war.robot1.Lives, war.robot1.Wins, war.robot1.Draws, war.robot1.Losses);
+                lit1.Text = String.Format(@"<strong>{0}</strong><br />Lives:  {1}<br /><br />Wins:   {2}<br />Draws:  {3}<br />Losses: {4}<br />", war.Robot1.Name, war.Robot1.Lives, war.Robot1.Wins, war.Robot1.Draws, war.Robot1.Losses);
                 this.pnlContender1.Controls.Add(lit1);
 
                 Literal lit2 = new Literal();
-                lit2.Text = String.Format(@"<strong>{0}</strong><br />Lives:  {1}<br /><br />Wins:   {2}<br />Draws:  {3}<br />Losses: {4}<br />", war.robot2.Name, war.robot2.Lives, war.robot2.Wins, war.robot2.Draws, war.robot2.Losses);
+                lit2.Text = String.Format(@"<strong>{0}</strong><br />Lives:  {1}<br /><br />Wins:   {2}<br />Draws:  {3}<br />Losses: {4}<br />", war.Robot2.Name, war.Robot2.Lives, war.Robot2.Wins, war.Robot2.Draws, war.Robot2.Losses);
                 this.pnlContender2.Controls.Add(lit2);
 
                 war.StartWar();
@@ -77,11 +70,11 @@ namespace RobotWars
                 pnlContender2.Controls.Add(litRounds2);
 
                 Literal lit3 = new Literal();
-                lit3.Text = String.Format(@"<strong>{0}</strong><br />Lives:  {1}<br /><br />Wins:   {2}<br />Draws:  {3}<br />Losses: {4}<br />", war.robot1.Name, war.robot1.Lives, war.robot1.Wins, war.robot1.Draws, war.robot1.Losses);
+                lit3.Text = String.Format(@"<strong>{0}</strong><br />Lives:  {1}<br /><br />Wins:   {2}<br />Draws:  {3}<br />Losses: {4}<br />", war.Robot1.Name, war.Robot1.Lives, war.Robot1.Wins, war.Robot1.Draws, war.Robot1.Losses);
                 this.pnlContender1After.Controls.Add(lit3);
 
                 Literal lit4 = new Literal();
-                lit4.Text = String.Format(@"<strong>{0}</strong><br />Lives:  {1}<br /><br />Wins:   {2}<br />Draws:  {3}<br />Losses: {4}<br />", war.robot2.Name, war.robot2.Lives, war.robot2.Wins, war.robot2.Draws, war.robot2.Losses);
+                lit4.Text = String.Format(@"<strong>{0}</strong><br />Lives:  {1}<br /><br />Wins:   {2}<br />Draws:  {3}<br />Losses: {4}<br />", war.Robot2.Name, war.Robot2.Lives, war.Robot2.Wins, war.Robot2.Draws, war.Robot2.Losses);
                 this.pnlContender2After.Controls.Add(lit4);
 
             }
