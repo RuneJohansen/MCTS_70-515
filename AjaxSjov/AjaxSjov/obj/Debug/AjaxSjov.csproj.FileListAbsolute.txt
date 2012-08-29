@@ -1,0 +1,5 @@
+C:\Users\Administrator.WIN-JLAING9LMBJ\Documents\GitHub\MCTS_70-515\AjaxSjov\AjaxSjov\bin\AjaxSjov.dll
+C:\Users\Administrator.WIN-JLAING9LMBJ\Documents\GitHub\MCTS_70-515\AjaxSjov\AjaxSjov\bin\AjaxSjov.pdb
+C:\Users\Administrator.WIN-JLAING9LMBJ\Documents\GitHub\MCTS_70-515\AjaxSjov\AjaxSjov\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator.WIN-JLAING9LMBJ\Documents\GitHub\MCTS_70-515\AjaxSjov\AjaxSjov\obj\Debug\AjaxSjov.dll
+C:\Users\Administrator.WIN-JLAING9LMBJ\Documents\GitHub\MCTS_70-515\AjaxSjov\AjaxSjov\obj\Debug\AjaxSjov.pdb

@@ -1,0 +1,46 @@
+Delegates
+---------
+
+Func<T, TResult> xxx = oper;
+
+Func<string, string> selector = str => str.ToUpper();
+
+
+string[] words = {"orange", "apple" ... };
+
+IEnumarable<string> upperWords = words.Select(selector);
+
+
+AJAX
+---------
+
+$event.PreventDefault();
+
+
+
+return false i f.eks. onclick event funktion, stopper eksekvering af yderligere onclick events... - brug preventdefault
+
+funktionalitet via "data-" attributter:
+
+data-action="load"
+data-action="save"
+data-action="prepend"
+data-action="append"
+data-action="replace"
+data-action="remove"
+
+data-target="#hatogbriller"
+
+$("<div/>") - opretter ny div - tag - kan bruges med alle (f.eks. <span/>)
+ex:
+function output(textSomSkalVises)
+{
+	var div = @("<div/>");
+	div.html(textSomSkalVises);
+	$(currentTarget).Text(div.find("#someID_In_TextSomSkalVises")); 
+}
+
+$.ajax();
+$.get()
+$.post()
+$.load()

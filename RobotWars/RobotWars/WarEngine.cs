@@ -4,17 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Xml;
 using System.Xml.Linq;
-
+using System.Data;
+using System.Data.SqlClient;
 
 abstract class WarEngine
 {
     public Robot Robot1;
     public Robot Robot2;
-    
+
     public int NumberOfRounds;
     public int MinimumNumberOfRounds = 10;
     public int CurrentRound;
-    public List<List<RoundInformation>> Rounds;
+    public List<List<RoundInformation>> BattleRounds;
+
+    private string connString = System.Configuration.ConfigurationManager.ConnectionStrings["ApplicationServices"].ConnectionString;
 
     public void NewWar(string filePath1, string filePath2)
     {
@@ -25,14 +28,24 @@ abstract class WarEngine
             this.ShowMessage(9, "Robotfil kunne ikke indlæses");
             return;
         }
-        this.NumberOfRounds = this.Robot1.Rounds.Count > this.Robot2.Rounds.Count ? this.Robot1.Rounds.Count : this.Robot2.Rounds.Count;
-        if (this.NumberOfRounds < this.MinimumNumberOfRounds)
-            this.NumberOfRounds = this.MinimumNumberOfRounds;
+    }
+
+    public void StartWar(long robot1ID, long robot2ID)
+    {
+        this.Robot1 = new Robot();
+        this.Robot1.LoadFromDB(robot1ID);
+        this.Robot2 = new Robot();
+        this.Robot2.LoadFromDB(robot2ID);
+        this.StartWar();
     }
 
     public void StartWar()
     {
-        this.Rounds = new List<List<RoundInformation>>();
+        this.NumberOfRounds = this.Robot1.Rounds.Count > this.Robot2.Rounds.Count ? this.Robot1.Rounds.Count : this.Robot2.Rounds.Count;
+        if (this.NumberOfRounds < this.MinimumNumberOfRounds)
+            this.NumberOfRounds = this.MinimumNumberOfRounds;
+
+        this.BattleRounds = new List<List<RoundInformation>>();
 
         int idx1, idx2;
 
@@ -60,7 +73,7 @@ abstract class WarEngine
             List<RoundInformation> roundInfo = new List<RoundInformation>();
             roundInfo.Add(new RoundInformation(this.CurrentRound, this.Robot1.Rounds[idx1].Weapon, this.Robot1.Rounds[idx1].Shield, robot1Hit));
             roundInfo.Add(new RoundInformation(this.CurrentRound, this.Robot2.Rounds[idx2].Weapon, this.Robot2.Rounds[idx2].Shield, robot2Hit));
-            this.Rounds.Add(roundInfo);
+            this.BattleRounds.Add(roundInfo);
 
             if (robot1Hit)
                 this.Robot1.Lives--;
@@ -145,7 +158,20 @@ abstract class WarEngine
         XmlTextWriter writer = new XmlTextWriter(filePath, System.Text.Encoding.UTF8);
     }
 
-
+    public DataSet GetContendersNameAndID()
+    {
+        DataSet ds = new DataSet();
+        using (SqlConnection conn = new SqlConnection(this.connString))
+        {
+            SqlCommand cmd = new SqlCommand("SELECT RobotName, RobotID FROM Robot", conn);
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            conn.Open();
+            da.Fill(ds);
+            conn.Close();
+        }
+        return ds;
+    }
     public abstract void ShowRound(RoundInformation robot1RoundInfo, RoundInformation robot2RoundInfo);
     public abstract void ShowMessage(int typeId, string message);
 }

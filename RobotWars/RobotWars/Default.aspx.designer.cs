@@ -22,6 +22,15 @@ namespace RobotWars {
         protected global::System.Web.UI.WebControls.FileUpload robotFile1;
         
         /// <summary>
+        /// save control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button save;
+        
+        /// <summary>
         /// robotFile2 control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace RobotWars {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload robotFile2;
+        
+        /// <summary>
+        /// ddContender1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddContender1;
         
         /// <summary>
         /// Start control.
@@ -40,57 +58,30 @@ namespace RobotWars {
         protected global::System.Web.UI.WebControls.Button Start;
         
         /// <summary>
-        /// pnlContenders control.
+        /// ddContender2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlContenders;
+        protected global::System.Web.UI.WebControls.DropDownList ddContender2;
         
         /// <summary>
-        /// pnlContender1 control.
+        /// ucRobot1Info control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlContender1;
+        protected global::RobotWars.Controls.RobotInfo ucRobot1Info;
         
         /// <summary>
-        /// pnlContender2 control.
+        /// ucRobot2Info control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlContender2;
-        
-        /// <summary>
-        /// pnlContenders2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlContenders2;
-        
-        /// <summary>
-        /// pnlContender1After control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlContender1After;
-        
-        /// <summary>
-        /// pnlContender2After control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlContender2After;
+        protected global::RobotWars.Controls.RobotInfo ucRobot2Info;
     }
 }
