@@ -7,11 +7,10 @@ using System.Web.UI.WebControls;
 
 namespace AjaxSjov.Ajax
 {
-    public partial class ChatMessage : System.Web.UI.Page
+    public partial class ChatMessages : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
     }
 }
