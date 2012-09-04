@@ -57,6 +57,7 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Ajax\ChatMessages.aspx" />
+    <Content Include="Controls\Control1.ascx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -113,6 +114,13 @@
     </Compile>
     <Compile Include="Ajax\ChatMessages.aspx.designer.cs">
       <DependentUpon>ChatMessages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Control1.ascx.cs">
+      <DependentUpon>Control1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Control1.ascx.designer.cs">
+      <DependentUpon>Control1.ascx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
